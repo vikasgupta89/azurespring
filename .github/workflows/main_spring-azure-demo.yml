@@ -6,7 +6,7 @@ name: Build and deploy JAR app to Azure Web App - spring-azure-demo
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'spring-azure-demo'
+        app-name: 'azure-demo4spring'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_a7a50d2695dd4fac9d66778aa8e53f6e }}
         package: '*.jar'
